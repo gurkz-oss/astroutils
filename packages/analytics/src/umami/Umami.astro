@@ -1,0 +1,10 @@
+---
+type Props = {
+	host: string;
+	websiteId: string;
+};
+
+const { host, websiteId } = Astro.props;
+---
+
+<script is:inline async src={host} data-website-id={websiteId}></script>

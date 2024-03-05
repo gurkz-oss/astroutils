@@ -15,10 +15,13 @@
     "turbo": "^1.12.4",
     "@changesets/cli": "^2.27.1"
   },
+  "peerDependencies": {
+    "astro": "^4.4.11"
+  },
   "scripts": {
     "changeset": "changeset",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md,js,astro}\"",
+    "format": "prettier --write \"**/*.{ts,tsx,js,astro}\"",
     "version-packages": "changeset version",
     "release": "turbo run lint && changeset publish"
   }

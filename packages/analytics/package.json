@@ -1,0 +1,19 @@
+{
+	"name": "@astroutils/analytics",
+	"version": "1.0.0",
+	"type": "module",
+	"license": "MIT",
+	"exports": {
+		"./umami": "./src/umami/index.ts"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"lint": "eslint ."
+	},
+	"devDependencies": {
+		"@astroutils/eslint-config": "workspace:*",
+		"prettier-plugin-astro": "^0.13.0"
+	}
+}
