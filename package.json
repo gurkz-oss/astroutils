@@ -20,6 +20,6 @@
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md,js,astro}\"",
     "version-packages": "changeset version",
-    "publish": "turbo run lint && changeset publish"
+    "release": "turbo run lint && changeset publish"
   }
 }
