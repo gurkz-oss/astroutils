@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "name": "astroutils-mono",
+  "version": "0.0.0",
+  "description": "monorepo for astroutils",
+  "type": "module",
+  "engines": {
+    "pnpm": ">=8",
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "turbo": "^1.12.4",
+    "@astroutils/eslint-config": "workspace:*"
+  },
+  "scripts": {
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md,js,astro}\""
+  }
+}
