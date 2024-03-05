@@ -9,13 +9,17 @@
     "node": ">=18"
   },
   "devDependencies": {
+    "@astroutils/eslint-config": "workspace:*",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
     "turbo": "^1.12.4",
-    "@astroutils/eslint-config": "workspace:*"
+    "@changesets/cli": "^2.27.1"
   },
   "scripts": {
+    "changeset": "changeset",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md,js,astro}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md,js,astro}\"",
+    "version-packages": "changeset version",
+    "publish": "turbo run lint && changeset publish"
   }
 }
