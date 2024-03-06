@@ -24,6 +24,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,js,astro}\"",
     "version-packages": "changeset version",
     "release": "turbo run lint && changeset publish",
-    "dev": "turbo dev"
+    "dev": "turbo dev",
+    "build": "turbo run build --cache-dir=.turbo"
   }
 }
