@@ -9,7 +9,8 @@ const { host, websiteId } = Astro.props;
 
 <script is:inline async src={host} data-website-id={websiteId} data-auto-track="false"></script>
 <script>
-	import { usingViewTransitions } from "../utils";
+	import { transitionEnabledOnThisPage } from "astro:transitions/client";
+	const usingViewTransitions = transitionEnabledOnThisPage();
 	if (!usingViewTransitions) {
 		// TODO: make this typed
 		const { umami } = window as any;
