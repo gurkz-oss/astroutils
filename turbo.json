@@ -1,7 +1,9 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
-    "check": {},
+    "check": {
+      "outputs": [".astro/**"]
+    },
     "lint": {},
     "dev": {
       "cache": false,
@@ -9,7 +11,7 @@
     },
     "build": {
       "outputs": ["dist/**"],
-      "dependsOn": ["lint"]
+      "dependsOn": ["check"]
     }
   }
 }
