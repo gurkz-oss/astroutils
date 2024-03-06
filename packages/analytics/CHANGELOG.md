@@ -1,5 +1,11 @@
 # @astroutils/analytics
 
+## 1.1.1
+
+### Patch Changes
+
+- a1d1a06: add package details in package.json and improve detection for view transitions
+
 ## 1.1.0
 
 ### Minor Changes

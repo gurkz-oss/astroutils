@@ -2,7 +2,7 @@
 	"name": "@astroutils/analytics",
 	"description": "a simple analytics package for Astro",
 	"homepage": "https://github.com/gurkz-oss/astroutils/wiki/analytics",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"type": "module",
 	"license": "MIT",
 	"exports": {
