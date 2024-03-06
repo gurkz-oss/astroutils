@@ -1,5 +1,7 @@
 {
 	"name": "@astroutils/analytics",
+	"description": "a simple analytics package for Astro",
+	"homepage": "https://github.com/gurkz-oss/astroutils/wiki/analytics",
 	"version": "1.1.0",
 	"type": "module",
 	"license": "MIT",
@@ -15,5 +17,12 @@
 	"devDependencies": {
 		"@astroutils/eslint-config": "workspace:*",
 		"prettier-plugin-astro": "^0.13.0"
-	}
+	},
+	"keywords": [
+		"astro",
+		"withastro",
+		"astro-component",
+		"analytics",
+		"astroutils"
+	]
 }
