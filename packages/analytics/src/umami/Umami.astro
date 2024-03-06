@@ -7,4 +7,17 @@ type Props = {
 const { host, websiteId } = Astro.props;
 ---
 
-<script is:inline async src={host} data-website-id={websiteId}></script>
+<script is:inline async src={host} data-website-id={websiteId} data-auto-track="false"></script>
+<script>
+	import { usingViewTransitions } from "../utils";
+	if (!usingViewTransitions) {
+		// TODO: make this typed
+		const { umami } = window as any;
+		umami.track((props: any) => ({ ...props, url: document.location.pathname }));
+	}
+	document.addEventListener("astro:page-load", () => {
+		// TODO: make this typed
+		const { umami } = window as any;
+		umami.track((props: any) => ({ ...props, url: document.location.pathname }));
+	});
+</script>
