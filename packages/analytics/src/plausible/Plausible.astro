@@ -1,0 +1,44 @@
+---
+function removeTrailingSlash(inputString: string): string {
+	if (inputString.slice(-1) === "/") {
+		return inputString.slice(0, -1);
+	}
+	return inputString;
+}
+
+type Props = {
+	/**
+	 * the domain to track
+	 */
+	domain: string;
+	/**
+	 * the URL for your Plausible instance (without the /js/script.js)
+	 */
+	host: string;
+};
+
+const { domain, host } = Astro.props;
+---
+
+<script is:inline defer data-domain={domain} src={`${removeTrailingSlash(host)}/js/script.manual.js`}></script>
+<script is:inline>
+	window.plausible =
+		window.plausible ||
+		function () {
+			(window.plausible.q = window.plausible.q || []).push(arguments);
+		};
+</script>
+<script>
+	import { transitionEnabledOnThisPage } from "astro:transitions/client";
+	const usingViewTransitions = transitionEnabledOnThisPage();
+	if (!usingViewTransitions) {
+		// TODO: make this typed
+		const { plausible } = window as any;
+		plausible("pageview");
+	}
+	document.addEventListener("astro:page-load", () => {
+		// TODO: make this typed
+		const { plausible } = window as any;
+		plausible("pageview");
+	});
+</script>

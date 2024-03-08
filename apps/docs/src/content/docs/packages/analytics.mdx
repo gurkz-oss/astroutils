@@ -3,7 +3,7 @@ title: "@astroutils/analytics"
 description: "how to use the analytics package"
 ---
 
-import { Tabs, TabItem, Steps } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Steps, Aside } from "@astrojs/starlight/components";
 
 which analytics provider are you using?
 
@@ -47,6 +47,53 @@ which analytics provider are you using?
             websiteId="the website id from umami"
         /> {/* add this before the end of your <head> tag */}
         ```
+
+    </Steps>
+
+  </TabItem>
+  <TabItem label="plausible">
+    <Steps>
+    1. Install the package:
+        <Tabs>
+            <TabItem label="pnpm">
+                ```bash
+                pnpm add @astroutils/analytics
+                ```
+            </TabItem>
+            <TabItem label="yarn">
+                ```bash
+                yarn add @astroutils/analytics
+                ```
+            </TabItem>
+            <TabItem label="npm">
+                ```bash
+                npm install @astroutils/analytics
+                ```
+            </TabItem>
+            <TabItem label="bun">
+                ```bash
+                bun add @astroutils/analytics
+                ```
+            </TabItem>
+        </Tabs>
+
+    2. Add the `<Analytics />` component to your layout file:
+        ```astro
+        ---
+        // File name: src/layouts/Layout.astro
+        import { Analytics } from "@astroutils/analytics/plausible";
+        ---
+
+        ...
+        <Analytics
+            host="https://plausible.io/"
+            domain="example.com"
+        /> {/* add this before the end of your <head> tag */}
+        ```
+
+        <Aside type="caution">
+            Make sure that the `host` does **not** include the `/js/script.js` part.
+        </Aside>
 
     </Steps>
 
