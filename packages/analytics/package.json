@@ -6,7 +6,8 @@
 	"type": "module",
 	"license": "MIT",
 	"exports": {
-		"./umami": "./src/umami/index.ts"
+		"./umami": "./src/umami/index.ts",
+		"./plausible": "./src/plausible/index.ts"
 	},
 	"publishConfig": {
 		"access": "public"
